@@ -35,7 +35,7 @@
                         <label for="nama_customer" class="col-md-3 col-form-label text-md-right">{{ __('Nama Customer') }}</label>
 
                         <div class="col-md-7">
-                            <input id="nama_customer" type="number" name="nama_customer" class="form-control @error('nama_customer') is-invalid @enderror" name="nama_customer" value="{{ $customer->nama_customer }}" required autocomplete="nama_customer" autofocus>
+                            <input id="name" type="text" name="nama_customer" class="form-control @error('nama_customer') is-invalid @enderror" name="nama_customer" value="{{ $customer->nama_customer }}" required autocomplete="nama_customer" autofocus>
 
                             @error('nama_customer')
                                 <span class="invalid-feedback" role="alert">

@@ -1,6 +1,6 @@
 @extends('adminlte.layouts.app')
 
-@section('title', 'List Customer')
+@section('title', 'Daftar Asset')
 
 {{-- Custom CSS --}}
 @push('css')
@@ -14,32 +14,39 @@
 	<div class="col-md-12">
 		<div class="card">
 		    <div class="card-header">
-		        <h3 class="card-title">List Customer</h3>
+		        <h3 class="card-title">Daftar Asset</h3>
 		    </div>
 		    <div class="card-body">
 		    	{{-- @include('partial.alert') --}}
 		    	<p>
-		    		<a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah Customer</a>
+                    @php
+                        $create = "/asset/create?jo_id=" . $jo->id;   
+                    @endphp
+		    		<a href="{{ $create }}" class="btn btn-primary">Tambah Data Asset</a>
 		    	</p>
 		    	<table class="table" id="example1">
 		    		<thead>
 		    			<tr>
-		    				<th>Tanggal</th>
-                            {{-- <th>ID Customer</th> --}}
-                            <th>Code Customer</th>
-		    				<th>Nama Customer</th>
-		    				<th>Action</th>
+		    				{{-- <th>Tanggal</th> --}}
+                            {{-- <th>ID Order</th> --}}
+                            <th>Serial Number</th>
+		    				<th>Produk Id</th>
+		    				<th>Produk Type</th>
+                            <th>Owner</th>
+		    				<th>Opsi</th>
 		    			</tr>
 		    		</thead>
 		    		<tbody>
-		    			@foreach($customer as $data)
+		    			@foreach($asset as $data)
 		    			<tr>
-		    				<td>{{ $data->created_at->toDateString() }}</td>
+		    				{{-- <td>{{ $data->created_at->toDateString() }}</td> --}}
 		    				{{-- <td>{{ $data->id }}</td> --}}
-		    				<td>{{ $data->code_customer }}</td>
-		    				<td>{{ $data->nama_customer }}</td>
+		    				<td>{{ $data->serial_number }}</td>
+                            <td>{{ $data->produk_id }}</td>
+                            <td>{{ $data->produk_type }}</td>
+                            <td>{{ $data->jo->project->customer->nama_customer }}</td>
 		    				<td>
-								<a class="btn btn-warning btn-sm" href="{{ route('customer.edit', $data->id) }}" data-toggle="tooltip" title="Edit">
+								<a class="btn btn-warning btn-sm" href="{{ route('asset.edit', $data->id) }}" data-toggle="tooltip" title="Edit">
 									<i class="fas fa-pencil-alt"></i>
 								</a>
 								<a class="btn btn-danger btn-sm" href="#"
@@ -47,7 +54,7 @@
 									<i class="fas fa-trash"></i>
 								</a>
 
-								<form id="delete-form" action="{{ route('customer.destroy', $data->id) }}" method="POST" style="display: none;">
+								<form id="delete-form" action="{{ route('asset.destroy', $data->id) }}" method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')
 								</form>

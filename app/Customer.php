@@ -11,4 +11,14 @@ class Customer extends Model
     protected $fillable = [
         'code_customer', 'nama_customer'
     ];
+
+    public function project()
+    {
+        return $this->hasMany('App\Project');
+    }
+
+    public function location()
+    {
+        return $this->hasMany('App\Location');
+    }
 }

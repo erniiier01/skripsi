@@ -24,6 +24,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Customer
 Route::resource('customer', 'CustomerController');
 
+//Project
+Route::resource('project', 'ProjectController');
+
+//Location
+Route::resource('location', 'LocationController');
+
+//Jo
+Route::resource('jo', 'JoController');
+
+//Jo
+Route::resource('asset', 'AssetController');
+
 Route::get('/blank-page', function () {
     return view('adminlte.blank');
 })->name('blank-page');

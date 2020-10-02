@@ -1,6 +1,6 @@
 @extends('adminlte.layouts.app')
 
-@section('title', 'List Customer')
+@section('title', 'Daftar Project')
 
 {{-- Custom CSS --}}
 @push('css')
@@ -14,32 +14,42 @@
 	<div class="col-md-12">
 		<div class="card">
 		    <div class="card-header">
-		        <h3 class="card-title">List Customer</h3>
+		        <h3 class="card-title">Daftar Project</h3>
 		    </div>
 		    <div class="card-body">
 		    	{{-- @include('partial.alert') --}}
 		    	<p>
-		    		<a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah Customer</a>
+		    		<a href="{{ route('project.create') }}" class="btn btn-primary">Tambah Data Project</a>
 		    	</p>
 		    	<table class="table" id="example1">
 		    		<thead>
 		    			<tr>
-		    				<th>Tanggal</th>
-                            {{-- <th>ID Customer</th> --}}
-                            <th>Code Customer</th>
-		    				<th>Nama Customer</th>
-		    				<th>Action</th>
+		    				{{-- <th>Tanggal</th> --}}
+                            {{-- <th>ID Order</th> --}}
+                            <th>Nama Customer</th>
+		    				<th>Project Code</th>
+		    				<th>Desc</th>
+                            <th>Date</th>
+		    				<th>Opsi</th>
 		    			</tr>
 		    		</thead>
 		    		<tbody>
-		    			@foreach($customer as $data)
+		    			@foreach($project as $data)
 		    			<tr>
-		    				<td>{{ $data->created_at->toDateString() }}</td>
+		    				{{-- <td>{{ $data->created_at->toDateString() }}</td> --}}
 		    				{{-- <td>{{ $data->id }}</td> --}}
-		    				<td>{{ $data->code_customer }}</td>
-		    				<td>{{ $data->nama_customer }}</td>
+		    				<td>{{ $data->customer->nama_customer }}</td>
+		    				<td>{{ $data->project_code }}</td>
+                            <td>{{ $data->desc }}</td>
+						<td>{{ $data->tanggal_mulai }} <span> S/D {{$data->tanggal_selesai}}</span> </td>
 		    				<td>
-								<a class="btn btn-warning btn-sm" href="{{ route('customer.edit', $data->id) }}" data-toggle="tooltip" title="Edit">
+								@php
+									$index = "/jo?project_id=".$data->id;	
+								@endphp
+								<a class="btn btn-success btn-sm" href="{{ $index }}" data-toggle="tooltip" title="Detail">
+									<i class="fa fa-info-circle"></i>
+								</a>
+								<a class="btn btn-warning btn-sm" href="{{ route('project.edit', $data->id) }}" data-toggle="tooltip" title="Edit">
 									<i class="fas fa-pencil-alt"></i>
 								</a>
 								<a class="btn btn-danger btn-sm" href="#"
@@ -47,7 +57,7 @@
 									<i class="fas fa-trash"></i>
 								</a>
 
-								<form id="delete-form" action="{{ route('customer.destroy', $data->id) }}" method="POST" style="display: none;">
+								<form id="delete-form" action="{{ route('project.destroy', $data->id) }}" method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')
 								</form>

@@ -1,9 +1,10 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('home') }}" class="brand-link d-flex align-items-center justify-content-center">
-        <span class="brand-text font-weight-light"><i class="fab fa-laravel fa-2x"></i>
-            {{ config('app.name', 'Laravel') }}</span>
+    <a href="#" class="brand-link d-flex align-items-center justify-content-center">
+        <span class="brand-text font-weight-light"><img src="{{ asset('dashboard/img/visionet.jpg') }}" alt="Logo" style="width: 100px;">
+            {{-- {{ config('app.name', 'Laravel') }} --}}
+        </span>
     </a>
 
     <!-- Sidebar -->
@@ -42,13 +43,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('crud.create') }}" class="nav-link">
+                            <a href="{{ route('project.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Project</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('crud.create') }}" class="nav-link">
+                            <a href="{{ route('location.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Location</p>
                             </a>
@@ -73,7 +74,13 @@
                         <li class="nav-item">
                             <a href="{{ route('crud.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Report Job Order</p>
+                                <p>Job Report</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('crud.create') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Report Asset Customer</p>
                             </a>
                         </li>
                     </ul>
