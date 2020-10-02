@@ -38,23 +38,26 @@ class AssetController extends Controller
         return view('asset.create', compact('customer', 'jo'));
     }
 
-    public function edit(Asset $asset) {
-
+    public function edit(Request $request, Asset $asset) {
+    // dd($asset);
         $customer = Customer::all();
-        return view('asset.edit', compact('asset', 'customer'));
+        $jo=Jo::find($request->jo_id);
+        return view('asset.edit', compact('asset', 'customer', 'jo'));
     }
 
-    public function update(Request $request, Location $location) {
+    public function update(Request $request, Asset $asset) {
+        // dd($asset);
         $asset->serial_number = $request->serial_number;
         $asset->produk_id = $request->produk_id;
         $asset->produk_type = $request->produk_type;
         $asset->save();
 
-        return redirect()->route('asset.index')->with('status','Data Asset updated!')->with('success', true);
+        return redirect()->route('asset.index', ['jo_id'=>$asset->jo_id])->with('status','Data Asset updated!')->with('success', true);
     }
 
-    public function destroy(Asset $asset) {
+    public function destroy(Request $request, Asset $asset) {
+        $jo=Jo::find($asset->jo_id);
         $asset->delete();
-        return redirect()->route('asset.index')->with('Data Asset deleted!')->with('success', true);
+        return redirect()->route('asset.index', ['jo_id'=>$jo->id])->with('Data Asset deleted!')->with('success', true);
     }
 }
