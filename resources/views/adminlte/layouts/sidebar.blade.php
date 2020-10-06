@@ -60,19 +60,19 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            TASK
+                            REPORT
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('customer.index') }}" class="nav-link">
+                            <a href="{{ route('projectmonitoring.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Project Monitoring </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('crud.create') }}" class="nav-link">
+                            <a href="{{ route('jobreport.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Job Report</p>
                             </a>

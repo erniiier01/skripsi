@@ -36,6 +36,12 @@ Route::resource('jo', 'JoController');
 //Jo
 Route::resource('asset', 'AssetController');
 
+//Project Monitoring
+Route::resource('projectmonitoring', 'ProjectMonitoringController');
+
+//Job Report
+Route::resource('jobreport', 'JobReportController');
+
 Route::get('/blank-page', function () {
     return view('adminlte.blank');
 })->name('blank-page');

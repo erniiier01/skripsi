@@ -1,6 +1,6 @@
 @extends('adminlte.layouts.app')
 
-@section('title', 'Daftar Project')
+@section('title', 'Project Monitoring')
 
 {{-- Custom CSS --}}
 @push('css')
@@ -14,54 +14,52 @@
 	<div class="col-md-12">
 		<div class="card">
 		    <div class="card-header">
-		        <h3 class="card-title">Daftar Project</h3>
+		        <h3 class="card-title">Project Monitoring</h3>
 		    </div>
 		    <div class="card-body">
-		    	<p>
-		    		<a href="{{ route('project.create') }}" class="btn btn-primary">Tambah Data Project</a>
-		    	</p>
+				
+				@if(!empty($project))
+				<div style="margin-bottom: 15px;">
+				<h5><strong>Nama Cutomer :</strong> {{$project->customer->nama_customer}}</h5>
+				<h5><strong>Project Code :</strong> {{$project->project_code}}</h5>
+				<h5><strong>Desc :  </strong>{{$project->desc}} </h5>
+				<h5><strong>Date : </strong> {{$project->tanggal_mulai}} <span>S/D {{$project->tanggal_selesai}}</span></h5>
+				</div>
+				@endif
+				
+				
 		    	<table class="table" id="example1">
 		    		<thead>
 		    			<tr>
-                            <th>Nama Customer</th>
-		    				<th>Project Code</th>
+                            <th>JO Id</th>
 		    				<th>Desc</th>
-                            <th>Date</th>
+                            <th>Status JO</th>
+                            <th>Target Date</th>
+                            <th>Grup Name</th>
+                            <th>Customer</th>
 		    				<th>Opsi</th>
 		    			</tr>
 		    		</thead>
 		    		<tbody>
-		    			@foreach($project as $data)
+		    			@foreach($jo as $data)
 		    			<tr>
-		    				{{-- <td>{{ $data->created_at->toDateString() }}</td> --}}
-		    				{{-- <td>{{ $data->id }}</td> --}}
-		    				<td>{{ $data->customer->nama_customer }}</td>
-		    				<td>{{ $data->project_code }}</td>
+                            <td>{{ $data->jo_id }}</td>
                             <td>{{ $data->desc }}</td>
-						<td>{{ $data->tanggal_mulai }} <span> S/D {{$data->tanggal_selesai}}</span> </td>
-		    				<td>
+                            <td>{{ $data->status_jo }}</td>
+							<td>{{ $data->target_date }}</td>
+							<td>{{ $data->location->grup_name }}</td>
+							<td>{{$data->project->customer->nama_customer}}</td>
+                        	<td>
 								@php
-									$index = "/jo?project_id=".$data->id;	
+									$index = "/asset?jo_id=".$data->id;	
 								@endphp
-								<a class="btn btn-success btn-sm" href="{{ $index }}" data-toggle="tooltip" title="Detail">
+								<a class="btn btn-primary btn-sm" href="{{ $index }}" data-toggle="tooltip" title="Tambah Asset">
 									<i class="fa fa-info-circle"></i>
 								</a>
-								<a class="btn btn-warning btn-sm" href="{{ route('project.edit', $data->id) }}" data-toggle="tooltip" title="Edit">
-									<i class="fas fa-pencil-alt"></i>
-								</a>
-								<a class="btn btn-danger btn-sm" href="#"
-									onclick="event.preventDefault();document.getElementById('delete-form').submit();">
-									<i class="fas fa-trash"></i>
-								</a>
-
-								<form id="delete-form" action="{{ route('project.destroy', $data->id) }}" method="POST" style="display: none;">
-									@csrf
-									@method('DELETE')
-								</form>
 							</td>
 		    			</tr>
 		    			@endforeach
-		    		</tbody>
+                    </tbody>
 		    	</table>
 		    </div>
 		</div>
