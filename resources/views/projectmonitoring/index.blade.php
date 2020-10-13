@@ -17,17 +17,6 @@
 		        <h3 class="card-title">Project Monitoring</h3>
 		    </div>
 		    <div class="card-body">
-				
-				@if(!empty($project))
-				<div style="margin-bottom: 15px;">
-				<h5><strong>Nama Cutomer :</strong> {{$project->customer->nama_customer}}</h5>
-				<h5><strong>Project Code :</strong> {{$project->project_code}}</h5>
-				<h5><strong>Desc :  </strong>{{$project->desc}} </h5>
-				<h5><strong>Date : </strong> {{$project->tanggal_mulai}} <span>S/D {{$project->tanggal_selesai}}</span></h5>
-				</div>
-				@endif
-				
-				
 		    	<table class="table" id="example1">
 		    		<thead>
 		    			<tr>

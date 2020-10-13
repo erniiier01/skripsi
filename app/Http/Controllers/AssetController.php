@@ -12,7 +12,9 @@ class AssetController extends Controller
     public function index(Request $request) {
         // dd($request->all());
         $jo=Jo::find($request->jo_id);
-        $asset = Asset::all();
+        $asset = Asset::join('jo', 'asset.jo_id', 'jo.id')->join('project', 'jo.project_id', 'project.id')->join('customer', 'project.customer_id', 'customer.id')->where('jo.id', $request->jo_id)->get();
+        // dd($asset);
+        // $asset= Asset::all();
         return view('asset.index', compact('asset', 'jo'));
     }
 

@@ -42,18 +42,5 @@ Route::resource('projectmonitoring', 'ProjectMonitoringController');
 //Job Report
 Route::resource('jobreport', 'JobReportController');
 
-Route::get('/blank-page', function () {
-    return view('adminlte.blank');
-})->name('blank-page');
-
-Route::get('/crud', function () {
-    return view('adminlte.crud.index');
-})->name('crud');
-
-Route::get('/crud/create', function () {
-    return view('adminlte.crud.create');
-})->name('crud.create');
-
-Route::get('/crud/edit', function () {
-    return view('adminlte.crud.edit');
-})->name('crud.edit');
+//Report Asset
+Route::resource('reportasset', 'ReportAssetController');

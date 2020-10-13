@@ -44,7 +44,7 @@
 		    				<td>{{ $data->serial_number }}</td>
                             <td>{{ $data->produk_id }}</td>
                             <td>{{ $data->produk_type }}</td>
-                            <td>{{ $data->jo->project->customer->nama_customer }}</td>
+                            <td>{{ $data->nama_customer }}</td>
 		    				<td>
 								<a class="btn btn-warning btn-sm" href="{{ route('asset.edit', $data->id) }}" data-toggle="tooltip" title="Edit">
 									<i class="fas fa-pencil-alt"></i>

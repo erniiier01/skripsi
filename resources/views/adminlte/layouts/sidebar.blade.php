@@ -38,19 +38,19 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('customer.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-archive nav-icon"></i>
                                 <p>Data Customer</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('project.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-archive nav-icon"></i>
                                 <p>Data Project</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('location.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-archive nav-icon"></i>
                                 <p>Data Location</p>
                             </a>
                         </li>
@@ -67,19 +67,19 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('projectmonitoring.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-chart-bar nav-icon"></i>
                                 <p>Project Monitoring </p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('jobreport.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-chart-bar nav-icon"></i>
                                 <p>Job Report</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('crud.create') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('reportasset.index') }}" class="nav-link">
+                                <i class="far fa-chart-bar nav-icon"></i>
                                 <p>Report Asset Customer</p>
                             </a>
                         </li>
