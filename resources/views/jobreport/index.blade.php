@@ -61,7 +61,7 @@
                         <div class="form-group">
                             <label for="tanggal_mulai" class="col-md-3 col-form-label text-md-left">{{ __('From') }}</label>
     
-                            <div class="col-md-3" style="margin-bottom: 12px;">
+                            <div class="col-md-2" style="margin-bottom: 12px;">
                                 <input id="tanggal_mulai" type="date" name="tanggal_mulai" class="form-control selec2bs4 @error('tanggal_mulai') is-invalid @enderror" name="tanggal_mulai" value="{{ old('tanggal_mulai') }}" required autocomplete="tanggal_mulai" autofocus>
     
                                 @error('tanggal_mulai')
@@ -76,7 +76,7 @@
                         <div class="form-group">
                             <label for="tanggal_selesai" class="col-md-3 col-form-label text-md-left">{{ __('To') }}</label>
     
-                            <div class="col-md-3" style="margin-bottom: 12px;">
+                            <div class="col-md-2" style="margin-bottom: 12px;">
                                 <input id="tanggal_selesai" type="date" name="tanggal_selesai" class="form-control @error('tanggal_selesai') is-invalid @enderror" name="tanggal_selesai" value="{{ old('tanggal_selesai') }}" required autocomplete="tanggal_selesai" autofocus>
     
                                 @error('tanggal_selesai')
