@@ -1,7 +1,7 @@
 @extends('auth.master')
 
 {{-- Title --}}
-@section('title', "Laravel - Login")
+@section('title', "Visionet - Login")
 
 @section('auth-content')
 <p class="login-box-msg">Sign in to start your session</p>

@@ -23,7 +23,7 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="#"><b>Laravel</b></a>
+      <a href="#"><img src="{{ asset('assets/dashboard/img/visionet.png') }}" alt="Logo" style="width: 200px;"></a>
     </div>
     <!-- /.login-logo -->
     <div class="card">

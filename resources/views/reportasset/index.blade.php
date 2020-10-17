@@ -36,7 +36,8 @@
                         @enderror
                     </div>
                     <p>
-                        <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-primary">Cari</button>
+                        <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-primary">Show</button>
+                        <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-danger">Export xlsx</button>
                     </p>
             </form>
 		    	<table class="table" id="example1">

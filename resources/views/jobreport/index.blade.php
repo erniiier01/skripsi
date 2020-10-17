@@ -19,8 +19,8 @@
 		    <div class="card-body">
             <form action="{{ route('jobreport.index') }}">
                         {{-- Nama Customer --}}
-                        <label for="nama_customer" class="col-md-2 col-form-label text-md-left">{{ __('Nama Customer') }}</label>
-                        <div class="col-md-2" style="margin-bottom: 20px;">
+                        <label for="nama_customer" class="col-md-2 col-form-label text-md-left">{{ __('Customer Name') }}</label>
+                        <div class="col-md-2" style="margin-bottom: 12px;">
                             <select class="form-control selec2bs4 @error('nama_customer') is-invalid @enderror"
                                 style="width: 100%" name="customer_id" required>
                                 <option disabled selected>Pilih</option>
@@ -40,7 +40,7 @@
 
                         {{-- Project Code --}}
                         <label for="project_code" class="col-md-2 col-form-label text-md-left">{{ __('Project Code') }}</label>
-                        <div class="col-md-2" style="margin-bottom: 20px;">
+                        <div class="col-md-2" style="margin-bottom: 12px;">
                             <select class="form-control selec2bs4 @error('project_code') is-invalid @enderror"
                                 style="width: 100%" name="project_id" required>
                                 <option disabled selected>Pilih</option>
@@ -57,11 +57,44 @@
                                 </span>
                             @enderror
                         </div>
+                        {{-- Tanggal --}}
+                        <div class="form-group">
+                            <label for="tanggal_mulai" class="col-md-3 col-form-label text-md-left">{{ __('From') }}</label>
+    
+                            <div class="col-md-3" style="margin-bottom: 12px;">
+                                <input id="tanggal_mulai" type="date" name="tanggal_mulai" class="form-control selec2bs4 @error('tanggal_mulai') is-invalid @enderror" name="tanggal_mulai" value="{{ old('tanggal_mulai') }}" required autocomplete="tanggal_mulai" autofocus>
+    
+                                @error('tanggal_mulai')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="tanggal_selesai" class="col-md-3 col-form-label text-md-left">{{ __('To') }}</label>
+    
+                            <div class="col-md-3" style="margin-bottom: 12px;">
+                                <input id="tanggal_selesai" type="date" name="tanggal_selesai" class="form-control @error('tanggal_selesai') is-invalid @enderror" name="tanggal_selesai" value="{{ old('tanggal_selesai') }}" required autocomplete="tanggal_selesai" autofocus>
+    
+                                @error('tanggal_selesai')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                
+                            </div>
+                        </div>
                         {{-- Cari --}}
                         <p>
-                            <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-primary">Cari</button>
+                            <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-primary">Show</button>
+                            <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-danger">Export xlsx</button>
                         </p>
+                        
                     </form>
+    
 				
 		    	<table class="table" id="example1">
 		    		<thead>

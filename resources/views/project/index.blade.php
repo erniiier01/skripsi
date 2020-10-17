@@ -1,6 +1,6 @@
 @extends('adminlte.layouts.app')
 
-@section('title', 'Daftar Project')
+@section('title', 'List Project')
 
 {{-- Custom CSS --}}
 @push('css')
@@ -14,16 +14,16 @@
 	<div class="col-md-12">
 		<div class="card">
 		    <div class="card-header">
-		        <h3 class="card-title">Daftar Project</h3>
+		        <h3 class="card-title">List Project</h3>
 		    </div>
 		    <div class="card-body">
 		    	<p>
-		    		<a href="{{ route('project.create') }}" class="btn btn-primary">Tambah Data Project</a>
+		    		<a href="{{ route('project.create') }}" class="btn btn-primary">Add Project</a>
 		    	</p>
 		    	<table class="table" id="example1">
 		    		<thead>
 		    			<tr>
-                            <th>Nama Customer</th>
+                            <th>Customer Name</th>
 		    				<th>Project Code</th>
 		    				<th>Desc</th>
                             <th>Date</th>
@@ -57,7 +57,7 @@
 								<form id="delete-form" action="{{ route('project.destroy', $data->id) }}" method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')
-								</form>
+								</form>*/
 							</td>
 		    			</tr>
 		    			@endforeach

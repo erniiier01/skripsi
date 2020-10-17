@@ -1,6 +1,6 @@
 @extends('adminlte.layouts.app')
 
-@section('title', 'Buat Data JO')
+@section('title', 'Create Job Order')
 
 {{-- Custom CSS --}}
 @push('css')
@@ -11,7 +11,7 @@
 	<div class="col-md-8">
 		<div class="card">
 		    <div class="card-header">
-		        <h3 class="card-title">Buat Data JO</h3>
+		        <h3 class="card-title">Create Job Order</h3>
 		    </div>
 		    <div class="card-body">
 		    	<form action="{{ route('jo.store') }}" method="POST">
@@ -120,7 +120,7 @@
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-3">
                             <button type="submit" class="btn btn-primary">
-                                {{ __('Simpan') }}
+                                {{ __('Save') }}
                             </button>
                         </div>
                     </div>

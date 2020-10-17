@@ -1,6 +1,6 @@
 @extends('adminlte.layouts.app')
 
-@section('title', 'Daftar Location')
+@section('title', 'List Location')
 
 {{-- Custom CSS --}}
 @push('css')
@@ -14,12 +14,12 @@
 	<div class="col-md-12">
 		<div class="card">
 		    <div class="card-header">
-		        <h3 class="card-title">Daftar Location</h3>
+		        <h3 class="card-title">List Location</h3>
 		    </div>
 		    <div class="card-body">
 		    	{{-- @include('partial.alert') --}}
 		    	<p>
-		    		<a href="{{ route('location.create') }}" class="btn btn-primary">Tambah Data Location</a>
+		    		<a href="{{ route('location.create') }}" class="btn btn-primary">Add Location</a>
 		    	</p>
 		    	<table class="table" id="example1">
 		    		<thead>

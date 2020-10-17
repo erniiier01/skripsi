@@ -19,15 +19,15 @@
 		    <div class="card-body">
 		    	{{-- @include('partial.alert') --}}
 		    	<p>
-		    		<a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah Customer</a>
+		    		<a href="{{ route('customer.create') }}" class="btn btn-primary">Add Customer</a>
 		    	</p>
 		    	<table class="table" id="example1">
 		    		<thead>
 		    			<tr>
-		    				<th>Tanggal</th>
+		    				<th>Date</th>
                             {{-- <th>ID Customer</th> --}}
                             <th>Code Customer</th>
-		    				<th>Nama Customer</th>
+		    				<th>Customer Name</th>
 		    				<th>Action</th>
 		    			</tr>
 		    		</thead>

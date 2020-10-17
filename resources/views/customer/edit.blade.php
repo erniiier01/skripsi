@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="nama_customer" class="col-md-3 col-form-label text-md-right">{{ __('Nama Customer') }}</label>
+                        <label for="nama_customer" class="col-md-3 col-form-label text-md-right">{{ __('Customer Name') }}</label>
 
                         <div class="col-md-7">
                             <input id="name" type="text" name="nama_customer" class="form-control @error('nama_customer') is-invalid @enderror" name="nama_customer" value="{{ $customer->nama_customer }}" required autocomplete="nama_customer" autofocus>

@@ -18,7 +18,7 @@
                     {{ method_field('PUT') }}
                     @csrf
                     <div class="form-group row">
-                        <label for="nama_customer" class="col-md-3 col-form-label text-md-right">{{ __('Nama Customer') }}</label>
+                        <label for="nama_customer" class="col-md-3 col-form-label text-md-right">{{ __('Customer Name') }}</label>
 
                         <div class="col-md-7">
                             <select class="form-control selec2bs4 @error('nama_customer') is-invalid @enderror"
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="tanggal_mulai" class="col-md-3 col-form-label text-md-right">{{ __('Tanggal Mulai') }}</label>
+                        <label for="tanggal_mulai" class="col-md-3 col-form-label text-md-right">{{ __('Start Date') }}</label>
 
                         <div class="col-md-7">
                             <input id="tanggal_mulai" type="date" name="tanggal_mulai" class="form-control @error('tanggal_mulai') is-invalid @enderror" name="tanggal_mulai" value="{{ $project->tanggal_mulai }}" required autocomplete="tanggal_mulai" autofocus>
@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="tanggal_selesai" class="col-md-3 col-form-label text-md-right">{{ __('Tanggal Selesai') }}</label>
+                        <label for="tanggal_selesai" class="col-md-3 col-form-label text-md-right">{{ __('End Date') }}</label>
 
                         <div class="col-md-7">
                             <input id="tanggal_selesai" type="date" name="tanggal_selesai" class="form-control @error('tanggal_selesai') is-invalid @enderror" name="tanggal_selesai" value="{{ $project->tanggal_selesai }}" required autocomplete="tanggal_selesai" autofocus>

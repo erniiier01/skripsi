@@ -1,6 +1,6 @@
 @extends('adminlte.layouts.app')
 
-@section('title', 'Daftar Asset')
+@section('title', 'List Asset JO')
 
 {{-- Custom CSS --}}
 @push('css')
@@ -14,7 +14,7 @@
 	<div class="col-md-12">
 		<div class="card">
 		    <div class="card-header">
-		        <h3 class="card-title">Daftar Asset</h3>
+		        <h3 class="card-title">List Asset JO</h3>
 		    </div>
 		    <div class="card-body">
 		    	{{-- @include('partial.alert') --}}
@@ -22,7 +22,8 @@
                     @php
                         $create = "/asset/create?jo_id=" . $jo->id;   
                     @endphp
-		    		<a href="{{ $create }}" class="btn btn-primary">Tambah Data Asset</a>
+					<a href="{{ $create }}" style="margin-left: 10px; margin-bottom: 20px;"class="btn btn-primary">Add Asset</a>
+					<button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-success">Print PDF</button>
 		    	</p>
 		    	<table class="table" id="example1">
 		    		<thead>

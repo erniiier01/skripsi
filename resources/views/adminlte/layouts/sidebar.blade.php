@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link d-flex align-items-center justify-content-center">
-        <span class="brand-text font-weight-light"><img src="{{ asset('dashboard/img/visionet.jpg') }}" alt="Logo" style="width: 100px;">
+        <span class="brand-text font-weight-light"><img src="{{ asset('assets/dashboard/img/visionet.png') }}" alt="Logo" style="width: 100px;">
             {{-- {{ config('app.name', 'Laravel') }} --}}
         </span>
     </a>
@@ -39,19 +39,19 @@
                         <li class="nav-item">
                             <a href="{{ route('customer.index') }}" class="nav-link">
                                 <i class="fas fa-archive nav-icon"></i>
-                                <p>Data Customer</p>
+                                <p>Customer</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('project.index') }}" class="nav-link">
                                 <i class="fas fa-archive nav-icon"></i>
-                                <p>Data Project</p>
+                                <p>Project</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('location.index') }}" class="nav-link">
                                 <i class="fas fa-archive nav-icon"></i>
-                                <p>Data Location</p>
+                                <p>Location</p>
                             </a>
                         </li>
                     </ul>

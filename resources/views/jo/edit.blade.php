@@ -1,6 +1,6 @@
 @extends('adminlte.layouts.app')
 
-@section('title', 'Edit JO')
+@section('title', 'Edit Job Order')
 
 {{-- Custom CSS --}}
 @push('css')
@@ -11,7 +11,7 @@
 	<div class="col-md-6">
 		<div class="card">
 		    <div class="card-header">
-		        <h3 class="card-title">Edit Location</h3>
+		        <h3 class="card-title">Edit Job Order</h3>
 		    </div>
 		    <div class="card-body">
 		    	<form action="{{ route('jo.update', $jo->id) }}" method="POST">

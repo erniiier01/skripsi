@@ -1,6 +1,6 @@
 @extends('adminlte.layouts.app')
 
-@section('title', 'Daftar JO')
+@section('title', 'List Job Order')
 
 {{-- Custom CSS --}}
 @push('css')
@@ -14,13 +14,13 @@
 	<div class="col-md-12">
 		<div class="card">
 		    <div class="card-header">
-		        <h3 class="card-title">Daftar Project</h3>
+		        <h3 class="card-title">List Job Order</h3>
 		    </div>
 		    <div class="card-body">
 				
 				@if(!empty($project))
 				<div style="margin-bottom: 15px;">
-				<h5><strong>Nama Cutomer :</strong> {{$project->customer->nama_customer}}</h5>
+				<h5><strong>Customer Name :</strong> {{$project->customer->nama_customer}}</h5>
 				<h5><strong>Project Code :</strong> {{$project->project_code}}</h5>
 				<h5><strong>Desc :  </strong>{{$project->desc}} </h5>
 				<h5><strong>Date : </strong> {{$project->tanggal_mulai}} <span>S/D {{$project->tanggal_selesai}}</span></h5>
@@ -34,7 +34,7 @@
 				}
 				@endphp
 				<p>
-					<a href="{{ $create }}" class="btn btn-primary">Tambah Data JO</a>
+					<a href="{{ $create }}" class="btn btn-primary">Create Job Order</a>
 				</p>
 		    	{{-- @include('partial.alert') --}}
 		    	<table class="table" id="example1">
@@ -66,7 +66,7 @@
 								@php
 									$index = "/asset?jo_id=".$data->id;	
 								@endphp
-								<a class="btn btn-primary btn-sm" href="{{ $index }}" data-toggle="tooltip" title="Tambah Asset">
+								<a class="btn btn-primary btn-sm" href="{{ $index }}" data-toggle="tooltip" title="Add Asset">
 									<i class="fas fa-file-medical"></i>
 								</a>
 								<a class="btn btn-warning btn-sm" href="{{ route('jo.edit', $data->id) }}" data-toggle="tooltip" title="Edit">
