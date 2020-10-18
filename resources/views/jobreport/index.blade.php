@@ -62,7 +62,7 @@
                             <label for="tanggal_mulai" class="col-md-3 col-form-label text-md-left">{{ __('From') }}</label>
     
                             <div class="col-md-2" style="margin-bottom: 12px;">
-                                <input id="tanggal_mulai" type="date" name="tanggal_mulai" class="form-control selec2bs4 @error('tanggal_mulai') is-invalid @enderror" name="tanggal_mulai" value="{{ old('tanggal_mulai') }}" required autocomplete="tanggal_mulai" autofocus>
+                                <input id="tanggal_mulai" type="date" name="tanggal_mulai" class="form-control selec2bs4 @error('tanggal_mulai') is-invalid @enderror" name="tanggal_mulai" value="{{ $tanggalMulai }}" required autocomplete="tanggal_mulai" autofocus>
     
                                 @error('tanggal_mulai')
                                     <span class="invalid-feedback" role="alert">
@@ -77,7 +77,7 @@
                             <label for="tanggal_selesai" class="col-md-3 col-form-label text-md-left">{{ __('To') }}</label>
     
                             <div class="col-md-2" style="margin-bottom: 12px;">
-                                <input id="tanggal_selesai" type="date" name="tanggal_selesai" class="form-control @error('tanggal_selesai') is-invalid @enderror" name="tanggal_selesai" value="{{ old('tanggal_selesai') }}" required autocomplete="tanggal_selesai" autofocus>
+                                <input id="tanggal_selesai" type="date" name="tanggal_selesai" class="form-control @error('tanggal_selesai') is-invalid @enderror" name="tanggal_selesai" value="{{ $tanggalSelesai }}" required autocomplete="tanggal_selesai" autofocus>
     
                                 @error('tanggal_selesai')
                                     <span class="invalid-feedback" role="alert">
@@ -135,10 +135,21 @@
 <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 
 <script>
     $(function () {
       $("#example1").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
         "columnDefs": [
             { "width": "10%", "targets": -1 }
         ]
