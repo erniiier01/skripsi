@@ -37,7 +37,6 @@
                     </div>
                     <p>
                         <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-primary">Show</button>
-                        <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-danger">Export xlsx</button>
                     </p>
             </form>
 		    	<table class="table" id="example1">
@@ -48,6 +47,7 @@
                             <th>Produk Type</th>
                             <th>Location</th>
                             <th>Customer</th>
+                            <th>Opsi</th>
 		    			</tr>
 		    		</thead>
 		    		<tbody>
@@ -62,6 +62,20 @@
                             @else
                             <td>{{ $data->location_name}}</td>
                             <td>{{ $data->nama_customer }}</td>
+                            <td>
+								<a class="btn btn-warning btn-sm" href="{{ route('asset.edit', $data->id) }}" data-toggle="tooltip" title="Edit">
+									<i class="fas fa-pencil-alt"></i>
+								</a>
+								<a class="btn btn-danger btn-sm" href="#"
+									onclick="event.preventDefault();document.getElementById('delete-form').submit();">
+									<i class="fas fa-trash"></i>
+								</a>
+
+								<form id="delete-form" action="{{ route('asset.destroy', $data->id) }}" method="POST" style="display: none;">
+									@csrf
+									@method('DELETE')
+								</form>
+							</td>
                             @endif
                         	<td>
 								@php
@@ -83,10 +97,21 @@
 <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 
 <script>
     $(function () {
       $("#example1").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+        'excel', 'print'
+        ],
         "columnDefs": [
             { "width": "10%", "targets": -1 }
         ]

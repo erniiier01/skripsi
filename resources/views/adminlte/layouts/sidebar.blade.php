@@ -85,6 +85,23 @@
                         </li>
                     </ul>
                 </li>
+                
+
+                {{-- <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            User
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <li class="nav-item">
+                        <a href="{{ route('user.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-group"></i>
+                            <p> User </p>
+                        </a>
+                    </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

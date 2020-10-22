@@ -44,3 +44,5 @@ Route::resource('jobreport', 'JobReportController');
 
 //Report Asset
 Route::resource('reportasset', 'ReportAssetController');
+
+Route::resource('user', 'UserController');
