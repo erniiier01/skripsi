@@ -90,7 +90,6 @@
                         {{-- Cari --}}
                         <p>
                             <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-primary">Show</button>
-                            <button type="submit" style="margin-left: 10px; margin-bottom: 20px;" class="btn btn-danger">Export xlsx</button>
                         </p>
                         
                     </form>
@@ -148,7 +147,7 @@
       $("#example1").DataTable({
         dom: 'Bfrtip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+        'excel', 'print'
         ],
         "columnDefs": [
             { "width": "10%", "targets": -1 }
