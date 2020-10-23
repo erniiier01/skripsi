@@ -30,11 +30,40 @@
 		    			</tr>
 		    		</thead>
 		    		<tbody>
-		    			@foreach($jo as $data)
+						@foreach($jo as $data)
+						<div class="modal" tabindex="-1" id="exampleModal-{{ $data->id }}" role="dialog">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<form action="{{ route('projectmonitoring.update', $data->id) }}" method="post">
+										{{ method_field('PUT') }}
+										@csrf
+									<div class="modal-header">
+										<h5 class="modal-title">Change Status</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="form-group col-md-4">
+											<label for="status">Status</label>
+											<select id="status" name="status_jo" class="form-control">
+												<option @if($data->status_jo == "Registrasi") selected @endif value="Registrasi">Registrasi</option>
+												<option @if($data->status_jo == "Close Complete") selected @endif value="Close Complete">Close Complete</option>
+											</select>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-primary">Submit</button>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									</div>
+									</form>
+								</div>
+							</div>
+						</div>
 		    			<tr>
                             <td>{{ $data->jo_id }}</td>
                             <td>{{ $data->desc }}</td>
-                            <td>{{ $data->status_jo }}</td>
+                            <td><a href="#" data-toggle="modal" data-target="#exampleModal-{{ $data->id }}">{{ $data->status_jo }}</a></td>
 							<td>{{ $data->target_date }}</td>
 							<td>{{ $data->location->grup_name }}</td>
 							<td>{{$data->project->customer->nama_customer}}</td>
