@@ -74,9 +74,6 @@
 								<a class="btn btn-primary btn-sm" href="{{ $index }}" data-toggle="tooltip" title="Detail Asset">
 									<i class="fa fa-info-circle"></i>
 								</a>
-								<a class="btn btn-warning btn-sm" href="{{ $index }}" type="submit" style="margin-left: 10px; margin-bottom: 10px;" >Submit
-								</a>
-								
 							</td>
 		    			</tr>
 		    			@endforeach

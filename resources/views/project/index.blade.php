@@ -57,7 +57,7 @@
 								<form id="delete-form" action="{{ route('project.destroy', $data->id) }}" method="POST" style="display: none;">
 									@csrf
 									@method('DELETE')
-								</form>*/
+								</form>
 							</td>
 		    			</tr>
 		    			@endforeach
