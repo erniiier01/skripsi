@@ -9,7 +9,7 @@ class Asset extends Model
     protected $table = 'asset';
 
     protected $fillable = [
-        'jo_id','serial_number', 'produk_id', 'produk_type'
+        'jo_id','serial_number', 'produk_id', 'produk_type', 'image'
     ];
 
     public function customer()

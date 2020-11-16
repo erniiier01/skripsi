@@ -43,8 +43,8 @@
 		    		<thead>
 		    			<tr>
                             <th>Serial Number</th>
-		    				<th>Produk</th>
-                            <th>Produk Type</th>
+		    				<th>Product</th>
+                            <th>Product Type</th>
                             <th>Location</th>
                             <th>Customer</th>
                             <th>Opsi</th>

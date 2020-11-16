@@ -49,10 +49,6 @@
                             <select class="form-control selec2bs4" name="status_jo" id="status_jo">
                                 <option value="Pilih">Pilih</option>
                                 <option value="Registrasi">Registrasi</option>
-                                <option value="Open-Need Assigment">Open-Need Assigment</option>
-                                <option value="Open Schedule">Open Schedule</option>
-                                <option value="WO Confirm">WO Confirm</option>
-                                <option value="Doc Verifikasi">Doc Verifikasi</option>
                                 <option value="Close Complete">Close Complete</option>`
                               </select>
                         </div>

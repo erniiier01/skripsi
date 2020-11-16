@@ -27,11 +27,10 @@
 		    	<table class="table" id="example1">
 		    		<thead>
 		    			<tr>
-		    				{{-- <th>Tanggal</th> --}}
-                            {{-- <th>ID Order</th> --}}
+							<th>Image</th>
                             <th>Serial Number</th>
-		    				<th>Produk Id</th>
-		    				<th>Produk Type</th>
+		    				<th>Product</th>
+		    				<th>Product Type</th>
                             <th>Owner</th>
 		    				<th>Opsi</th>
 		    			</tr>
@@ -39,8 +38,8 @@
 		    		<tbody>
 		    			@foreach($asset as $data)
 		    			<tr>
-		    				{{-- <td>{{ $data->created_at->toDateString() }}</td> --}}
-		    				{{-- <td>{{ $data->id }}</td> --}}
+
+							<td><img src="{{ URL::to('/') }}/images/{{ $data->image }}" class="img-thumbnail" width="200" /></td>
 		    				<td>{{ $data->serial_number }}</td>
                             <td>{{ $data->produk_id }}</td>
                             <td>{{ $data->produk_type }}</td>

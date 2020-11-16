@@ -54,10 +54,6 @@
                                 style="width: 100%" name="status_jo" required>
                                 <option value="Pilih">Pilih</option>
                                 <option value="Registrasi" @if($jo->status_jo == "Registrasi") selected @endif>Registrasi</option>
-                                <option value="Open-Need Assigment" @if($jo->status_jo == "Open-Need Assigment") selected @endif>Open-Need Assigment</option>
-                                <option value="Open Schedule" @if($jo->status_jo == "Open Schedule") selected @endif>Open Schedule</option>
-                                <option value="WO Confirm" @if($jo->status_jo == "WO Confirm") selected @endif>WO Confirm</option>
-                                <option value="Doc Verifikasi" @if($jo->status_jo == "Doc Verifikasi") selected @endif>Doc Verifikasi</option>
                                 <option value="Close Complete" @if($jo->status_jo == "Close Complete") selected @endif>Close Complete</option>
                             </select>
                             @error('status_jo')

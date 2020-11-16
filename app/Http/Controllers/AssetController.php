@@ -25,11 +25,6 @@ class AssetController extends Controller
     public function store(Request $request) {
         $asset = Asset::create($request->all());
 
-        // $customer = Customer::find($request->customer);
-
-        // $asset->customer()->associate($customer);
-        // $asset->save();
-
         return redirect()->route('asset.index', ['jo_id'=>$request->jo_id]);
     }
 
@@ -48,10 +43,11 @@ class AssetController extends Controller
     }
 
     public function update(Request $request, Asset $asset) {
-        // dd($asset);
+
         $asset->serial_number = $request->serial_number;
         $asset->produk_id = $request->produk_id;
         $asset->produk_type = $request->produk_type;
+        $asset->image = $request->image;
         $asset->save();
 
         return redirect()->route('asset.index', ['jo_id'=>$asset->jo_id])->with('status','Data Asset updated!')->with('success', true);
