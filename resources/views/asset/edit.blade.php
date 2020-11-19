@@ -62,11 +62,18 @@
                     <div class="form-group">
                         <label for="image" class="col-md-3 col-form-label text-md-right">{{ __('Upload Serial Number') }}</label>
                        
+                    <div class="form-group row">
+                        <label for="foto" class="col-md-3 col-form-label text-md-right">{{ __('Foto') }}</label>
                         <div class="col-md-7">
-                            <input type="file" name="image" />
-                            <img src="{{ URL::to('/') }}/images/{{ $asset->image }}" class="img-thumbnail" width="200" />
-                            <input type="hidden" name="hidden_image" value="{{ $asset->image }}" required autocomplete="image" autofocus>
+                            <input id="foto" type="file" accept="image/x-png,image/gif,image/jpeg" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ old('foto') }}" autocomplete="foto" autofocus>
+    
+                            @error('foto')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
+    
                     </div>
 
                     <div class="form-group row mb-0">

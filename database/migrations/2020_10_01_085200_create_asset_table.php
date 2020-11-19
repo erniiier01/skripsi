@@ -15,8 +15,9 @@ class CreateAssetTable extends Migration
     {
         Schema::create('asset', function (Blueprint $table) {
             $table->id();
+            $table->string('foto')->nullable();
             $table->string('serial_number', 100);
-            $table->string('produk_id', 15);
+            $table->string('produk_id', 50);
             $table->string('produk_type', 100);
             $table->foreignId('jo_id')->constrained('jo');
             $table->timestamps();

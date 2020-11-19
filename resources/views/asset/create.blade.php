@@ -58,11 +58,17 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="image" class="col-md-3 col-form-label text-md-right">{{ __('Upload Serial Number') }}</label>
-                        
+                    <div class="form-group row">
+                        <label for="foto" class="col-md-3 col-form-label text-md-right">{{ __('Foto ') }}</label>
+
                         <div class="col-md-7">
-                            <input type="file" name="image" class="img-thumbnail">                            @enderror
+                            <input id="foto" type="file" accept="foto/x-png,foto/gif,foto/jpeg,foto/jpg, foto/JPG" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ old('foto') }}" required autocomplete="foto" autofocus>
+
+                            @error('foto')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
 

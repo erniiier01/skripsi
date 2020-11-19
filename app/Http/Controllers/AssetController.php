@@ -25,14 +25,28 @@ class AssetController extends Controller
     public function store(Request $request) {
         $asset = Asset::create($request->all());
 
+        $asset = Asset::create($request->except('foto'));
+        if ($request->hasFile('foto')) {
+            // Mengambil file yang diupload
+            $uploaded_foto = $request->file('foto');
+            // mengambil extension file
+            $extension = $uploaded_foto->getClientOriginalExtension();
+            // membuat nama file random berikut extension
+            $filename = md5(time()) . '.' . $extension;
+            // menyimpan cover ke folder public/img
+            $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'img';
+            $uploaded_foto->move($destinationPath, $filename);
+            // mengisi field cover di book dengan filename yang baru dibuat
+            $asset->foto = $filename;
+            $assset->save();
+        }
         return redirect()->route('asset.index', ['jo_id'=>$request->jo_id]);
     }
 
-    public function create(Request $request)
-    {
+    public function create(Request $request) {
         $jo=Jo::find($request->jo_id);
-        $customer = Customer::all();
-        return view('asset.create', compact('customer', 'jo'));
+            $customer = Customer::all();
+            return view('asset.create', compact('customer', 'jo'));
     }
 
     public function edit(Request $request, Asset $asset) {
@@ -44,11 +58,35 @@ class AssetController extends Controller
 
     public function update(Request $request, Asset $asset) {
 
+        $asset->update($request->all());
+        if ($request->hasFile('foto')) {
+            // mengambil foto yang diupload berikut ekstensinya
+            $filename = null;
+            $uploaded_foto = $request->file('foto');
+            $extension = $uploaded_foto->getClientOriginalExtension();
+            // membuat nama file random dengan extension
+            $filename = md5(time()) . '.' . $extension;
+            $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'img';
+            // memindahkan file ke folder public/img
+            $uploaded_foto->move($destinationPath, $filename);
+            // hapus foto lama, jika ada
+            if ($asset->foto) {
+            $old_foto = $asset->foto;
+            $filepath = public_path() . DIRECTORY_SEPARATOR . 'img'
+            . DIRECTORY_SEPARATOR . $asset->foto;
+            try {
+                 File::delete($filepath);
+            } catch (FileNotFoundException $e) {
+            // File sudah dihapus/tidak ada
+            }
+            }
+
         $asset->serial_number = $request->serial_number;
         $asset->produk_id = $request->produk_id;
         $asset->produk_type = $request->produk_type;
-        $asset->image = $request->image;
+        $asset->foto = $filename;
         $asset->save();
+        }
 
         return redirect()->route('asset.index', ['jo_id'=>$asset->jo_id])->with('status','Data Asset updated!')->with('success', true);
     }
