@@ -14,7 +14,7 @@
 		        <h3 class="card-title">Edit Project</h3>
 		    </div>
 		    <div class="card-body">
-		    	<form action="{{ route('asset.update', $asset->id) }}" method="POST">
+		    	<form action="{{ route('asset.update', $asset->id) }}" method="POST" enctype="multipart/form-data">
                     {{ method_field('PUT') }}
                     @csrf
                     <div class="form-group row">
@@ -59,8 +59,6 @@
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="image" class="col-md-3 col-form-label text-md-right">{{ __('Upload Serial Number') }}</label>
                        
                     <div class="form-group row">
                         <label for="foto" class="col-md-3 col-form-label text-md-right">{{ __('Foto') }}</label>
@@ -73,8 +71,14 @@
                                 </span>
                             @enderror
                         </div>
-    
+                        <div class="form-group row">
+                            <div style="margin-left: 370px;" class="col-md-7">
+                                <img src="/img/{{$asset->foto}}" width="200px;" alt="">
+                            </div>
+                        </div>
                     </div>
+
+                    
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-3">

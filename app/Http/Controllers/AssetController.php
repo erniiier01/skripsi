@@ -23,7 +23,6 @@ class AssetController extends Controller
     }
 
     public function store(Request $request) {
-        $asset = Asset::create($request->all());
 
         $asset = Asset::create($request->except('foto'));
         if ($request->hasFile('foto')) {
@@ -38,7 +37,7 @@ class AssetController extends Controller
             $uploaded_foto->move($destinationPath, $filename);
             // mengisi field cover di book dengan filename yang baru dibuat
             $asset->foto = $filename;
-            $assset->save();
+            $asset->save();
         }
         return redirect()->route('asset.index', ['jo_id'=>$request->jo_id]);
     }

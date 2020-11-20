@@ -39,7 +39,7 @@
 		    			@foreach($asset as $data)
 		    			<tr>
 
-							<td><img src="{{ URL::to('/') }}/foto/{{ $data->foto }}" class="img-thumbnail" width="200px;" /></td>
+							<td><img src="img/{{$data->foto}}" width="200px;" alt=""></td>
 		    				<td>{{ $data->serial_number }}</td>
                             <td>{{ $data->produk_id }}</td>
                             <td>{{ $data->produk_type }}</td>

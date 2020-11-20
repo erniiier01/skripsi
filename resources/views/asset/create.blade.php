@@ -14,7 +14,7 @@
 		        <h3 class="card-title">New Asset</h3>
 		    </div>
 		    <div class="card-body">
-		    	<form action="{{ route('asset.store') }}" method="POST">
+		    	<form action="{{ route('asset.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="jo_id" value="{{ $jo->id }}">
                     <div class="form-group row">
