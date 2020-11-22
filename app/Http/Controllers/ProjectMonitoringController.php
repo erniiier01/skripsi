@@ -17,12 +17,12 @@ class ProjectMonitoringController extends Controller
 
     public function update(Request $request, $id) {
         $joF = Jo::find($id);
-        // dd($request->all());
+        
         $joF->update([
             'status_jo' => $request->status_jo 
         ]);
 
-        return redirect()->route('projectmonitoring.index', compact('jo'));
+        return redirect()->route('projectmonitoring.index', compact('joF'));
     }
 
     public function show() {

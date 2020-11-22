@@ -20,7 +20,7 @@ class CustomerController extends Controller
 
     public function create()
     {
-        return view('customer.create', compact('status'));
+        return view('customer.create');
     }
 
     public function edit(Customer $customer) {
