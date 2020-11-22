@@ -39,7 +39,7 @@
 		    			@foreach($asset as $data)
 		    			<tr>
 
-							<td><img src="img/{{$data->foto}}" width="200px;" alt=""></td>
+							<td><img src="storage/{{$data->foto}}" width="200px;" alt=""></td>
 		    				<td>{{ $data->serial_number }}</td>
                             <td>{{ $data->produk_id }}</td>
                             <td>{{ $data->produk_type }}</td>
